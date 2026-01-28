@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>자잘한 실무 팁</title>
+  <link rel="stylesheet" href="static/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="index.html">
+      <div class="logo"></div>
+      <div>
+        <div class="title">신규 살려!</div>
+        <div class="tag">신규 살리는 실무 가이드</div>
+      </div>
+    </a>
+
+    <nav class="nav" aria-label="주요 메뉴"></nav>
+
+    <div class="search">
+      <div class="icon">🔎</div>
+      <input id="siteSearch" type="search" placeholder="페이지 검색" autocomplete="off" />
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <h1>자잘한 실무 팁</h1>
+    <p class="sub">도무지 모르겠는데 편람에서 못 찾겠다. 신규의 시간이 살살 녹는다.</p>
+    <span class="badge">최종 업데이트: <b id="lastUpdated">-</b></span>
+  </section>
+
+  <section class="grid">
+    <main>
+      <div class="card">
+        <h2 id="files">전임자가 처리한 내역 참고하기 (작성중)</h2>
+        <ul>
+          <li>문서등록대장에 전임자 성명으로 생산 문서를 검색한다. </li>
+          <li> </li>
+          <li> </li>
+        </ul>
+
+        <h2 id="edufine">에듀파인 소소한 팁</h2>
+        <div class="callout warn">
+          <div class="t">캡처화면 참고</div>
+          <ul>
+            <li>공문 저장하는 방법</li>
+            <li>“재정기안” 탭을 상단 바로가기에 고정하는 방법</li>
+            <li>결재요청 했던 품의·원인행위·지출결의 재작성 하는 방법</li>
+            <li>공문 보고 업무 담당자 이름·연락처 찾는 방법</li>
+          </ul>
+        </div>
+
+        <br>
+        <p>이미지 파일을 누르면 확대됩니다.</p>
+        <br>
+
+
+        <div class="imggrid">
+          <!-- image-001 -->
+          <figure class="imgcard">
+            <div class="imgwrap">
+              <img
+                src="assets/img/image-001.jpg"
+                alt="공문 저장 버튼 위치 캡처"
+                class="img-zoomable"
+                data-lb-group="edufine"
+              />
+              <div class="overlay">
+                <span class="marker" style="--x:86; --y:8;">1</span>
+              </div>
+            </div>
+            <figcaption class="imgcap">
+              <p class="t">1) 공문 저장하는 방법</p>
+              <p class="d">문서를 누르면 우측 상단에 디스크 모양 버튼이 있습니다. 이걸 누르면 문서 본문과 첨부파일을 저장할 수 있습니다.</p>
+            </figcaption>
+          </figure>
+
+          <!-- image-002 -->
+          <figure class="imgcard">
+            <div class="imgwrap">
+              <img
+                src="assets/img/image-002.jpg"
+                alt="개인환경설정에서 재정기안 상단 바로가기 추가 캡처"
+                class="img-zoomable"
+                data-lb-group="edufine"
+              />
+              <div class="overlay">
+                <span class="marker" style="--x:90; --y:10;">1</span>
+                <span class="marker" style="--x:15; --y:40;">2</span>
+                <span class="marker" style="--x:22; --y:60;">3</span>
+              </div>
+            </div>
+            <figcaption class="imgcap">
+              <p class="t">2) 상단 바로가기에 재정기안 탭 고정하는 방법</p>
+              <p class="d">우측 상단의 사람 모양 아이콘 누르기  → 개인 환경설정 탭 누르기 → 알림존에서 재정기안에 체크 후 저장</p>
+            </figcaption>
+          </figure>
+
+          <!-- image-003 -->
+          <figure class="imgcard">
+            <div class="imgwrap">
+              <img
+                src="assets/img/image-003.jpg"
+                alt="재정기안 탭에서 반송 버튼으로 재기안 캡처"
+                class="img-zoomable"
+                data-lb-group="edufine"
+              />
+              <div class="overlay">
+                <span class="marker" style="--x:80; --y:15;">1</span>
+              </div>
+            </div>
+            <figcaption class="imgcap">
+              <p class="t">3) 재정문서 재작성 하기</p>
+              <p class="d">결재 요청 상태인 문서 중에 반송할 목록에 네모박스 체크 → 반송 클릭 → 품의저장/원인행위저장/지출결의저장 등의 상태로 변경되어 있을 겁니다. 누르면 개요와 금액 등 수정하여 재작성 가능합니다.</p>
+            </figcaption>
+          </figure>
+
+          <!-- image-004 -->
+          <figure class="imgcard">
+            <div class="imgwrap">
+              <img
+                src="assets/img/image-004.jpg"
+                alt="공문 PDF에서 담당자/시행번호/전화/팩스 확인 캡처"
+                class="img-zoomable"
+                data-lb-group="edufine"
+              />
+            </div>
+            <figcaption class="imgcap">
+              <p class="t">4) 담당자 연락처 확인하는 방법</p>
+              <p class="d">공문 하단을 보면 담당자 이름, 연락처, 문서 시행번호 등이 표시됩니다. 해당 번호로 전화하시면 담당자와 통화 가능합니다. </p>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="callout">
+          <div class="t">Q. 담당자에게 전화해서 뭐라고 말해야 할까요?</div>
+          <p>
+            소속과 성명을 먼저 밝히신 후에 이러한 용건으로 전화드렸다고 하시는 게 무난합니다. <br>
+            "안녕하세요, oo초등학교 행정실 김신규입니다. xx업무 처리 중에 질문이 있어서 전화드렸습니다."
+          </p>
+        </div>
+
+        <br>
+        <br>
+
+        <h2 id="read">문서 기안할 때 체크리스트</h2>
+          <ul>
+            <li>오타는 없나요?</li>
+            <li>본문에 적은 붙임 파일들을 실제로 첨부하셨나요?</li>
+            <li>첨부파일은 제대로 작성되어 있나요?</li>
+            <li>발송해야 하는 공문인데 수신기관 설정 없이 내부결재로 올리시지는 않았나요?</li>
+            <li>자동발송에 체크하셨나요?</li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+
+        <br>
+        <br>
+
+        <h2 id="read">(체크리스트)</h2>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+
+        <h2 id="alarm">무언가 잘못된 것 같을 때 체크리스트</h2>
+        <details>
+          <summary>숫자가 이상하다</summary>
+          <ul>
+            <li>단순 오타인지 계산식이 잘못된 건지 확인해보세요.</li>
+            <li>개요에 적힌 금액과 실제 지출 금액이 다른 건 아닌지 확인해보세요.</li>
+            <li></li>
+          </ul>
+        </details>
+
+        <br>
+        <br>
+
+        <details>
+          <summary>(작성중)</summary>
+          <ul>
+            <li> </li>
+            <li> </li>
+          </ul>
+        </details>
+
+        <br>
+        <br>
+        
+        <details>
+          <summary>(작성중)</summary>
+          <ul>
+            <li> </li>
+            <li> </li>
+          </ul>
+        </details>
+
+        <div class="btnrow">
+          <a class="btn" href="guide.html"> 생존 가이드</a>
+          <a class="btn" href="glossary.html"> 용어·FAQ</a>
+        </div>
+      </div>
+    </main>
+
+    <aside class="card toc" id="toc"></aside>
+  </section>
+
+  <button id="topBtn" class="topbtn" type="button">↑ 상단</button>
+
+  <footer class="footer"></footer>
+</div>
+
+<script src="static/main.js"></script>
+</body>
+</html>
+

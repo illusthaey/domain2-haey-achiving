@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>업무 맵</title>
+  <link rel="stylesheet" href="static/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="index.html">
+      <div class="logo"></div>
+      <div>
+        <div class="title">신규 살려!</div>
+        <div class="tag">신규 살리는 실무 가이드</div>
+      </div>
+    </a>
+    <nav class="nav">
+      <a data-nav href="index.html">홈</a>
+      <a data-nav href="guide.html">생존가이드</a>
+      <a data-nav href="wave.html">파도타기</a>
+      <a data-nav href="expend.html">지출업무</a>
+      <a data-nav href="payroll.html">인건비</a>
+      <a data-nav href="glossary.html">용어·FAQ</a>
+    </nav>
+    <div class="search">
+      <div class="icon">🔎</div>
+      <input id="siteSearch" type="search" placeholder="페이지 검색" autocomplete="off" />
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <h1>업무 전체 흐름 파악하기</h1>
+    <p class="sub">당장 급한 것들 간신히 틀어막으면서 조각조각 습득하는 단편적인 업무 지식을 전체 흐름으로 정리하는 과정이 필요합니다. </p>
+    <span class="badge">최종 업데이트: <b id="lastUpdated">-</b></span>
+  </section>
+
+  <section class="grid">
+    <main>
+      <div class="card">
+        <h2 id="big">학교행정의 큰 덩어리 (작성중)</h2>
+        <ul>
+          <li><b>회계 업무</b>: 예산편성 → 집행 (세입/세출) → 정산 </li>
+          <li><b>공사·용역·물품 계약</b>: 품의 → 계약(원인행위) → 이행 → 검수 → 지급(지출결의)</li>
+          <li><b> </b>: </li>
+          <li><b> </b>: </li>
+          <li><b> </b>: </li>
+          <li><b> </b>: </li>
+        </ul>
+
+        <h2 id="flow">(작성중) </h2>
+        <div class="callout">
+          <div class="t">(예시)</div>
+          <p><b> </b> </p>
+          <p><b> </b> </p>
+        </div>
+
+        <h2 id="3">(작성중)</h2>
+        <ul>
+          <li><b> </b>: </li>
+          <li><b> </b>: </li>
+          <li><b> </b>: </li>
+        </ul>
+
+        <h2 id="next">둘러보기</h2>
+        <div class="btnrow">
+          <a class="btn" href="wave.html"> 문서등록대장 파도타기</a>
+          <a class="btn" href="expend.html"> 지출 업무</a>
+          <a class="btn" href="payroll.html"> 인건비 지급</a>
+        </div>
+      </div>
+    </main>
+    <aside class="card toc" id="toc"></aside>
+  </section>
+
+  <button id="topBtn" class="topbtn" type="button">↑ 상단</button>
+
+  <footer class="footer">
+    <div class="wrap row">
+      <div>© edulabhaey</div>
+      <div class="small"><a href="index.html">홈</a> · <a href="guide.html">사용가이드</a></div>
+    </div>
+  </footer>
+</div>
+
+<script src="static/main.js"></script>
+</body>
+</html>

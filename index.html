@@ -3,59 +3,109 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>기록관 + 업무보조</title>
-  <link rel="stylesheet" href="./assets/style.css" />
+  <title>신규 살려</title>
+  <meta name="description" content="신규 살리는 실무 가이드" />
+  <link rel="stylesheet" href="static/style.css" />
 </head>
 <body>
   <header class="topbar">
-    <div class="wrap topbar__inner">
-      <div class="brand">
-        <div class="brand__title">아카이빙 기록관</div>
-        <div class="brand__sub">기록 · 컨디션 · 업무 보조 (화이트 고정)</div>
-      </div>
-      <nav class="nav">
-        <a class="nav__link" href="./archive.html">기록관</a>
-        <a class="nav__link" href="./work.html">업무보조(달력)</a>
-        <a class="nav__link" href="./calculators.html">계산기</a>
+    <div class="wrap topbar-inner">
+      <a class="brand" href="index.html" aria-label="홈">
+        <div class="logo"></div>
+        <div>
+          <div class="title">신규 살려!</div>
+          <div class="tag">신규 살리는 실무 가이드</div>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="주요 메뉴">
+        <a data-nav href="map.html">업무 맵</a>
+        <a data-nav href="wave.html">파도타기</a>
+        <a data-nav href="expend.html">지출업무</a>
+        <a data-nav href="payroll.html">인건비</a>
+        <a data-nav href="glossary.html">잡화점</a>
       </nav>
+
+      <div class="search">
+        <div class="icon">🔎</div>
+        <input id="siteSearch" type="search" placeholder="페이지 검색: 예) 지출업무, 파도타기, 인건비" autocomplete="off" />
+        <div id="searchResults" class="search-results" role="listbox"></div>
+      </div>
     </div>
   </header>
 
-  <main class="wrap">
+  <div class="wrap">
     <section class="hero">
-      <h1 class="hero__title">내 기록과 업무를 한 화면에서.</h1>
-      <p class="hero__desc">
-        기록관은 날짜/태그로 정렬되고, 업무보조는 월간·주간·(오늘/내일) 2일 일정으로 운영합니다.
-        서버 없이 웹호스팅으로 먼저 돌리기 위해 데이터는 브라우저에 저장됩니다.
+      <h1>신규 살려!</h1>
+      <p class="sub">
+        나는 이미 학교에 던져졌고, 당장 학교는 돌아가야 하는데, 업무는 아무것도 모른다. 편람을 봐도 모르겠고 뭘 어떻게 물어봐야 할지도 모르겠다. 
       </p>
 
-      <div class="grid2">
-        <a class="card" href="./archive.html">
-          <div class="card__title">기록관</div>
-          <div class="card__desc">컨텐츠 감상 · 개발 학습 · 일상 로그를 날짜/태그로 조회</div>
-          <div class="card__meta">기능: 기록 추가, 태그 필터, JSON 내보내기/가져오기</div>
-        </a>
-
-        <a class="card" href="./work.html">
-          <div class="card__title">업무보조</div>
-          <div class="card__desc">업무 일정 달력 (월간/주간/오늘·내일 2일)</div>
-          <div class="card__meta">기능: 일정 추가, 수정/삭제, 로컬 저장, JSON 백업</div>
-        </a>
+      <div class="btnrow">
+        <a class="btn" href="guide.html">신규 생존 가이드</a>
+        <a class="btn" href="wave.html">문서등록대장 파도타기</a>
+        <a class="btn" href="expend.html">지출업무</a>
+        <a class="btn" href="payroll.html">인건비</a>
       </div>
 
-      <div class="notice">
-        <strong>주의:</strong> localStorage 저장이라 같은 기기/브라우저에서만 유지됩니다.
-        다른 PC로 옮기려면 각 화면의 <b>내보내기(JSON)</b>로 백업 후 <b>가져오기</b>로 복원하세요.
-      </div>
+      <div class="hr"></div>
+      <span class="badge">파도타기/ 지출결의/ 인건비</span>
+      <span class="badge">최종 업데이트(로딩 기준): <b id="lastUpdated">-</b></span>
     </section>
-  </main>
 
-  <footer class="footer">
-    <div class="wrap footer__inner">
-      <span class="muted">© 개인 기록 인프라 (정적 웹호스팅 MVP)</span>
-    </div>
-  </footer>
+    <section class="grid">
+      <main>
+        <div class="card">
+          <h2 id="mvp">필수 생존장비 3가지</h2>
+          <div class="kv">
+            <div class="k">1) 문서등록대장 파도타기</div>
+            <div class="v">관련 문서와 편람을 타고 타고 타고 가면서 업무 흐름을 파악하고 정보를 습득합니다.</div>
+            <div class="k">2) 전임자 업무 처리 내역 참고하기</div>
+            <div class="v">모르면 베끼자! (단, 전임자도 모르고 처리했을 수도 있으니 확인이 필요합니다.)</div>
+            <div class="k">3) 모르는 건 물어보기</div>
+            <div class="v">나도 말하는 감자인데 동기들도 감자 신세는 똑같서 머리를 맞대도 소용이 없다. 그럼 대체 누구에게 어떻게 물어야 하는가? 두둥! </div>
+          </div>
 
-  <script src="./assets/common.js"></script>
+          <div class="callout warn">
+            <div class="t">※주의사항</div>
+            <ul>
+              <li>가능한 관련 근거와 규정을 기재하겠으나, 이 웹사이트는 참고용으로만 활용하여 주십시오.</li>
+              <li>웹사이트 개발자는 업무 처리 결과에 대해 책임질 수 없습니다. 반드시 해당 지역의 지침과 편람 등을 읽고 정확한 내용을 확인하여 주십시오.</li>
+            </ul>
+          </div>
+
+          <h3 id="howto">이 사이트의 목표</h3>
+          <ul>
+            <li>대략적인 업무 흐름을 파악할 수 있도록 간단히 정리</li>
+            <li>자잘한 실무 팁들 공유 (하찮을 수 있음)</li>
+            <li>막막한 기분이 조금이라도 나아지도록 마음으로 응원하기</li>
+          </ul>
+
+          <div class="btnrow">
+            <a class="btn" href="map.html">업무 맵</a>
+            <a class="btn" href="skills.html"> 자잘한 실무 팁</a>
+            <a class="btn" href="about.html">사이트 설명</a>
+          </div>
+        </div>
+      </main>
+
+      <aside class="card toc" id="toc"></aside>
+    </section>
+
+    <button id="topBtn" class="topbtn" type="button">↑ 상단</button>
+
+
+    <section class="happy-illust">
+      <img
+        src="assets/img/happy-illust.jpg"
+        alt="해피해피 고주무관"
+      />
+    </section>
+
+    <footer class="footer"></footer>
+  </div>
+
+  <script src="static/main.js"></script>
 </body>
 </html>
+
