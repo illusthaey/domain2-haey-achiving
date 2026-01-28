@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>기록관</title>
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <div class="brand">
+        <div class="brand__title">기록관</div>
+        <div class="brand__sub">공용 JSON 기반(전 기기 동일) + 임시 편집(draft)</div>
+      </div>
+      <nav class="nav">
+        <a class="nav__link" href="./index.html">홈</a>
+        <a class="nav__link is-active" href="./archive.html">기록관</a>
+        <a class="nav__link" href="./work.html">업무보조</a>
+        <a class="nav__link" href="./calculators.html">계산기</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <div class="panel__header">
+        <h2 class="panel__title">기록 추가(임시)</h2>
+        <div class="panel__actions">
+          <button class="btn" id="btnReloadShared">공용 JSON 새로고침</button>
+          <button class="btn" id="btnExportMerged">내보내기(병합 JSON)</button>
+          <label class="btn btn--ghost">
+            가져오기(임시)
+            <input type="file" id="fileImportDraft" accept="application/json" hidden />
+          </label>
+          <button class="btn btn--danger" id="btnClearDraft">임시편집 전체 삭제</button>
+        </div>
+      </div>
+
+      <div class="hint">
+        <b>운영 원칙:</b> 전 기기 동일 반영은 <code>/data/archive-records.json</code> 수정(커밋) 기준입니다.
+        화면에서 추가/수정한 내용은 <b>이 기기 임시편집(draft)</b>으로 저장됩니다.
+        최종 반영은 <b>내보내기(병합 JSON)</b> → GitHub JSON 교체 커밋으로 처리하세요.
+      </div>
+
+      <form id="recordForm" class="form">
+        <div class="form__row">
+          <label class="label">날짜</label>
+          <input class="input" type="date" id="recDate" required />
+        </div>
+
+        <div class="form__row">
+          <label class="label">제목</label>
+          <input class="input" type="text" id="recTitle" placeholder="예: 영화 감상 / Flask 공부 로그" required />
+        </div>
+
+        <div class="form__row">
+          <label class="label">태그(쉼표로 구분)</label>
+          <input class="input" type="text" id="recTags" placeholder="예: 영화,감상,SF / 개발,python,flask" />
+        </div>
+
+        <div class="form__row">
+          <label class="label">내용</label>
+          <textarea class="textarea" id="recBody" rows="6" placeholder="메모/감상/학습 내용"></textarea>
+        </div>
+
+        <div class="form__row form__row--end gap">
+          <button class="btn btn--ghost" type="button" id="btnCancelEdit">수정 취소</button>
+          <button class="btn btn--primary" type="submit">임시 저장</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="panel__header">
+        <h2 class="panel__title">조회</h2>
+        <div class="panel__actions">
+          <input class="input input--small" type="text" id="tagFilter" placeholder="태그 필터 (예: 영화)" />
+          <select class="select" id="sortMode">
+            <option value="desc">최신순</option>
+            <option value="asc">오래된순</option>
+          </select>
+          <select class="select" id="viewMode">
+            <option value="merged">공용+임시(기본)</option>
+            <option value="shared">공용만</option>
+            <option value="draft">임시만</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="tagCloud" class="tags"></div>
+      <div id="recordList" class="list"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="muted">공용 원본: /data/archive-records.json · 임시편집: localStorage</span>
+    </div>
+  </footer>
+
+  <script src="./assets/common.js"></script>
+  <script src="./assets/archive.js"></script>
+</body>
+</html>

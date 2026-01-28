@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>기록관 + 업무보조</title>
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <div class="brand">
+        <div class="brand__title">아카이빙 기록관</div>
+        <div class="brand__sub">기록 · 컨디션 · 업무 보조 (화이트 고정)</div>
+      </div>
+      <nav class="nav">
+        <a class="nav__link" href="./archive.html">기록관</a>
+        <a class="nav__link" href="./work.html">업무보조(달력)</a>
+        <a class="nav__link" href="./calculators.html">계산기</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1 class="hero__title">내 기록과 업무를 한 화면에서.</h1>
+      <p class="hero__desc">
+        기록관은 날짜/태그로 정렬되고, 업무보조는 월간·주간·(오늘/내일) 2일 일정으로 운영합니다.
+        서버 없이 웹호스팅으로 먼저 돌리기 위해 데이터는 브라우저에 저장됩니다.
+      </p>
+
+      <div class="grid2">
+        <a class="card" href="./archive.html">
+          <div class="card__title">기록관</div>
+          <div class="card__desc">컨텐츠 감상 · 개발 학습 · 일상 로그를 날짜/태그로 조회</div>
+          <div class="card__meta">기능: 기록 추가, 태그 필터, JSON 내보내기/가져오기</div>
+        </a>
+
+        <a class="card" href="./work.html">
+          <div class="card__title">업무보조</div>
+          <div class="card__desc">업무 일정 달력 (월간/주간/오늘·내일 2일)</div>
+          <div class="card__meta">기능: 일정 추가, 수정/삭제, 로컬 저장, JSON 백업</div>
+        </a>
+      </div>
+
+      <div class="notice">
+        <strong>주의:</strong> localStorage 저장이라 같은 기기/브라우저에서만 유지됩니다.
+        다른 PC로 옮기려면 각 화면의 <b>내보내기(JSON)</b>로 백업 후 <b>가져오기</b>로 복원하세요.
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="muted">© 개인 기록 인프라 (정적 웹호스팅 MVP)</span>
+    </div>
+  </footer>
+
+  <script src="./assets/common.js"></script>
+</body>
+</html>
